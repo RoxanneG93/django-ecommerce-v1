@@ -1,0 +1,30 @@
+{
+  "name": "django_ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoxanneG93/django-ecommerce-v1.git"
+  },
+  "author": "Roxanne Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoxanneG93/django-ecommerce-v1/issues"
+  },
+  "homepage": "https://github.com/RoxanneG93/django-ecommerce-v1#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.11.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
