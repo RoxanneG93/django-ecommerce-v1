@@ -114,3 +114,6 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# webpack node modules #
+webpack-config/node_modules
