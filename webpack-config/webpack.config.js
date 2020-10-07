@@ -3,14 +3,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const exclusions = /node_modules/;
 
-console.log(path.resolve(__dirname))
+//console.log(path.resolve(__dirname))
 module.exports = [
     {
       entry: {
-        app: "./assets/app.js",
+        app: ["./assets/app.js", "./assets/scss/app.scss"],
       },
       output: {
-        path: path.resolve(__dirname, "../ecommerce/static/"),
+        path: path.resolve(__dirname, "../ecommerce/static"),
         publicPath: "/static/",
         filename: "[name].js",
         chunkFilename: "[id]-[chunkhash].js",
@@ -21,29 +21,37 @@ module.exports = [
       },
       module: {
         rules: [
-        //   {
-        //     test: /.*/,
-        //     include: path.resolve(__dirname, "assets/img"),
-        //     exclude: exclusions,
-        //     options: {
-        //       context: path.resolve(__dirname, "assets/"),
-        //       name: "[path][name].[ext]",
-        //     },
-        //     loader: "file-loader",
-        //   },
           {
-            test: /\.css$/,
+            test: /\.(svg|png|jpg|gif)$/,
+            include: path.resolve(__dirname, "assets/img/"),
+            exclude: exclusions,
+            loader: "file-loader",
+            options: {
+                context: path.resolve(__dirname, "assets/img/"),
+                name: "[name].[ext]",
+                outputPath: path.resolve(__dirname, "../ecommerce/static"),
+                publicPath: '/static/',
+            },
+          },
+          {
+            test: /\.scss$/,
             exclude: exclusions,
             use: [
-              MiniCssExtractPlugin.loader,
-              { loader: "css-loader" },
+              MiniCssExtractPlugin.loader, // 3. extracts css to css file
+              "css-loader", // 2. turns css into commonjs
+              "sass-loader" // 1. turns sass into css
             ],
           },
         ],
       },
       plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            options: {
+                publicPath: '/static/',
+            },
+        }),
       ],
     },
 ];
