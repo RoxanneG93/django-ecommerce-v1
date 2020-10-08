@@ -34,6 +34,7 @@ module.exports = [
       },
       plugins: [
         new CleanWebpackPlugin({
+            // ignores assets folder in app's static dir
             cleanOnceBeforeBuildPatterns: [`!${path.resolve(__dirname, "../ecommerce/static/assets")}`],
             cleanStaleWebpackAssets: false 
         }),
