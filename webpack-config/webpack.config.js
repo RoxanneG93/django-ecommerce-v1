@@ -22,18 +22,6 @@ module.exports = [
       module: {
         rules: [
           {
-            test: /\.(svg|png|jpg|gif)$/,
-            include: path.resolve(__dirname, "assets/img/"),
-            exclude: exclusions,
-            loader: "file-loader",
-            options: {
-                context: path.resolve(__dirname, "assets/img/"),
-                name: "[name].[ext]",
-                outputPath: path.resolve(__dirname, "../ecommerce/static"),
-                publicPath: '/static/',
-            },
-          },
-          {
             test: /\.scss$/,
             exclude: exclusions,
             use: [
@@ -45,7 +33,10 @@ module.exports = [
         ],
       },
       plugins: [
-        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [`!${path.resolve(__dirname, "../ecommerce/static/assets")}`],
+            cleanStaleWebpackAssets: false 
+        }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
             options: {
