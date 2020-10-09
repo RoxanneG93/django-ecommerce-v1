@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Need to move these out into webpack config -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'app.css' %}">
     <title>Ecomm</title>
 </head>
 <body>
@@ -26,7 +23,7 @@
          <div class="form-inline my-2 my-lg-0">
              <a href="#" class="btn btn-warning">Login</a>
              <a href="{% url 'cart'%}">
-                 <img src="{% static 'images/cart.png' %}" alt="" id="cart-icon">
+              <img src="{% static 'assets/images/cart.png' %}" alt="" id="cart-icon">
              </a>
              <p id="cart-total">0</p>
          </div>

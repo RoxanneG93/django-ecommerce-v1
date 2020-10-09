@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,7 +93,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const hello2 = 'hello world!! edited!!';\nconsole.log(hello2)\n\n//# sourceURL=webpack:///./assets/app.js?");
+eval("const hello2 = 'hello world!!';\nconsole.log(hello2)\n\n//# sourceURL=webpack:///./assets/app.js?");
+
+/***/ }),
+
+/***/ "./assets/scss/app.scss":
+/*!******************************!*\
+  !*** ./assets/scss/app.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/scss/app.scss?");
 
 /***/ }),
 
@@ -461,14 +472,14 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 
 /***/ }),
 
-/***/ 0:
-/*!*******************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://localhost:8081 ./assets/app.js ***!
-  \*******************************************************************************/
+/***/ 1:
+/*!******************************************************************************************************!*\
+  !*** multi (webpack)-dev-server/client?http://localhost:8081 ./assets/app.js ./assets/scss/app.scss ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! /Users/roxanne/Documents/personal_dev/Django_Ecommerce/webpack-config/node_modules/webpack-dev-server/client/index.js?http://localhost:8081 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:8081\");\nmodule.exports = __webpack_require__(/*! ./assets/app.js */\"./assets/app.js\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
+eval("__webpack_require__(/*! /Users/roxanne/Documents/personal_dev/Django_Ecommerce/webpack-config/node_modules/webpack-dev-server/client/index.js?http://localhost:8081 */\"./node_modules/webpack-dev-server/client/index.js?http://localhost:8081\");\n__webpack_require__(/*! ./assets/app.js */\"./assets/app.js\");\nmodule.exports = __webpack_require__(/*! ./assets/scss/app.scss */\"./assets/scss/app.scss\");\n\n\n//# sourceURL=webpack:///multi_(webpack)-dev-server/client?");
 
 /***/ })
 
