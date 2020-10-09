@@ -134,3 +134,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_URL = '/assets/products/'
+
+# where file uploads will be stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/assets/products')
